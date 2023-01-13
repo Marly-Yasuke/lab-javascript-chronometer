@@ -33,15 +33,20 @@ getMinutes() {
    }
   }
 
-  computeTwoDigitNumber(value) {
-    value = value.toString
-    let result ="0"
-if(value.length < 2){
-  return result + value
-}else{
-  return value
-}
+  computeTwoDigitNumber(value){
+    value = value.toString()
+      let result ="0"
+  if(value.length < 2){
+    result = result + value
+    return result.slice(0, 2)
+  }else if (value.length >= 2){
+    value = value.toString()
+    return value.slice(0, 2)
+  }else if (value == 0){
+    return '00'
   }
+    }
+
 
   stop() {
    clearInterval(this.intervalId)
@@ -53,10 +58,11 @@ document.getElementsByClassName('number').innerHTML = 0
   }
 
   split() {
-   return this.getMinutes + ':' + this.getSeconds
+    return this.computeTwoDigitNumber(this.getMinutes()) + ':' +
+    this.computeTwoDigitNumber(this.getSeconds())
+
   }
 }
-console.log(Chronometer)
 
 // The following is required to make unit tests work.
 /* Environment setup. Do not modify the below code. */
