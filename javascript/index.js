@@ -12,15 +12,15 @@ const secUniElement = document.getElementById('secUni');
 const milDecElement = document.getElementById('milDec');
 const milUniElement = document.getElementById('milUni');
 const splitsElement = document.getElementById('splits');
+console.log(chronometer.stop())
 
 function printTime() {
   // ... your code goes here
 }
 
 function printMinutes() {
-  // ... your code goes here
-}
 
+}
 function printSeconds() {
   // ... your code goes here
 }
@@ -38,25 +38,44 @@ function clearSplits() {
   // ... your code goes here
 }
 
-function setStopBtn() {
-  // ... your code goes here
-}
 
+
+function setStopBtn() {
+// if(btnLeftElement.classList.contains('btn', 'start')){
+  btnLeftElement.classList.toggle('btn', 'start')
+  btnLeftElement.classList.toggle('btn', 'stop')
+  btnLeftElement.textContent = 'STOP'
+  chronometer.start()
+  console.log('stop')
+
+// }
+}
 function setSplitBtn() {
   // ... your code goes here
 }
 
 function setStartBtn() {
-  // ... your code goes here
+// if(btnLeftElement.classList.contains('btn', 'stop')){
+    btnLeftElement.classList.toggle('btn', 'stop')
+    btnLeftElement.classList.toggle('btn', 'start')
+    btnLeftElement.textContent = 'START'
+    chronometer.stop()
+    console.log('start')
+
+
+// }
 }
 
 function setResetBtn() {
-  // ... your code goes here
+
 }
 
+// only switch to stop => in this case run both, code to implement
 // Start/Stop Button
 btnLeftElement.addEventListener('click', () => {
 
+ setStartBtn()
+ setStopBtn()
 });
 
 // Reset/Split Button
