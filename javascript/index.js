@@ -56,7 +56,6 @@ function setResetBtn() {
 btnRightElement.textContent = 'RESET'
 }
 
-// only switch to stop => in this case run both, code to implement
 // Start/Stop Button
 btnLeftElement.addEventListener('click', () => {
   if (btnLeftElement.classList.contains('start')) {

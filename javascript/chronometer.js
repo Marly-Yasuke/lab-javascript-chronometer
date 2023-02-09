@@ -10,6 +10,7 @@ this.intervalId = null
 
     this.intervalId = setInterval(() => {
       this.currentTime ++;
+      console.log("test")
       if(callback){
         callback();
       }
@@ -63,6 +64,15 @@ document.getElementsByClassName('number').innerHTML = 0
 
   }
 }
+
+
+// Method testing part
+let test = new Chronometer()
+console.log(test.start())
+let showTime = setInterval(()=>{
+  console.log(test.currentTime)
+}, 1000);
+console.log(showTime)
 
 // The following is required to make unit tests work.
 /* Environment setup. Do not modify the below code. */
