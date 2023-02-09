@@ -1,3 +1,4 @@
+
 const chronometer = new Chronometer();
 
 // get the buttons:
@@ -33,7 +34,7 @@ function setStopBtn() {
   btnLeftElement.classList.remove('btn', 'start');
   btnLeftElement.classList.add('btn', 'stop');
   btnLeftElement.textContent = 'STOP';
-chronometer.stop()
+  chronometer.start()
 }
 
 
@@ -41,7 +42,7 @@ function setStartBtn() {
   btnLeftElement.classList.remove('btn', 'stop');
   btnLeftElement.classList.add('btn', 'start');
   btnLeftElement.textContent = 'START';
-chronometer.start()
+  chronometer.stop()
 }
 
 function setSplitBtn() {
